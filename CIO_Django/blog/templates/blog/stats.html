@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/stats.css' %}"> 
+    {% for i in csstats %}
+        <article class="media content-section">
+          <div class="media-body">
+            <p class="article-content">PLAYER:  {{ i.player }}</p>
+            <p class="article-content">HOURS: {{ i.hours }}</p>
+            <p class="article-content">KPR: {{ i.ak_kills_per_round }}</p>
+            <p class="article-content">AKPR: {{ i.awp_kills_per_round }}</p>
+            <p class="article-content">HEADSHOT %: {{ i.headshot_percent }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
